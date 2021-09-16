@@ -1,0 +1,315 @@
+{
+	"connections": [
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 0
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 1
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "sharpen",
+			"to_port": 0
+		},
+		{
+			"from": "gen_inputs",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 2
+		},
+		{
+			"from": "sharpen",
+			"from_port": 0,
+			"to": "buffer_2",
+			"to_port": 0
+		},
+		{
+			"from": "buffer_2",
+			"from_port": 0,
+			"to": "gen_outputs",
+			"to_port": 0
+		}
+	],
+	"label": "Wood Maker",
+	"longdesc": "",
+	"name": "Wood_Maker",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -1059.651001,
+				"y": -173.733521
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"persistence": 0.5,
+				"scale_x": 8,
+				"scale_y": 12
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -1092.291016,
+				"y": 24.442354
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 1,
+				"persistence": 0.5,
+				"scale_x": 1,
+				"scale_y": 2
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -792.105896,
+				"y": -21.553003
+			},
+			"parameters": {
+				"amount": 0.5,
+				"blend_type": 0
+			},
+			"type": "blend"
+		},
+		{
+			"name": "warp",
+			"node_position": {
+				"x": -778.301697,
+				"y": -154.720886
+			},
+			"parameters": {
+				"amount": 0.825,
+				"eps": 0.19,
+				"mode": 1
+			},
+			"preview": 0,
+			"type": "warp"
+		},
+		{
+			"name": "sharpen",
+			"node_position": {
+				"x": -475.009613,
+				"y": 11.573816
+			},
+			"parameters": {
+				"size": 9
+			},
+			"type": "sharpen"
+		},
+		{
+			"name": "gen_inputs",
+			"node_position": {
+				"x": -1532.744629,
+				"y": -90.480919
+			},
+			"parameters": {
+
+			},
+			"ports": [
+				{
+					"group_size": 0,
+					"name": "Opacity Mask",
+					"type": "f"
+				}
+			],
+			"type": "ios"
+		},
+		{
+			"name": "gen_outputs",
+			"node_position": {
+				"x": -4.022459,
+				"y": -87.568588
+			},
+			"parameters": {
+
+			},
+			"ports": [
+				{
+					"group_size": 0,
+					"name": "Wood grey",
+					"type": "f"
+				}
+			],
+			"type": "ios"
+		},
+		{
+			"name": "gen_parameters",
+			"node_position": {
+				"x": -875.840332,
+				"y": -609.061096
+			},
+			"parameters": {
+				"param0": 8,
+				"param1": 12,
+				"param2": 1,
+				"param3": 2,
+				"param4": 0.825,
+				"param5": 0.19,
+				"param6": 0,
+				"param7": 0.5,
+				"param8": 9
+			},
+			"type": "remote",
+			"widgets": [
+				{
+					"label": "Blend mode",
+					"linked_widgets": [
+						{
+							"node": "blend",
+							"widget": "blend_type"
+						}
+					],
+					"name": "param6",
+					"type": "linked_control"
+				},
+				{
+					"label": "Opacity",
+					"linked_widgets": [
+						{
+							"node": "blend",
+							"widget": "amount"
+						}
+					],
+					"name": "param7",
+					"type": "linked_control"
+				},
+				{
+					"label": "Scale1 X",
+					"linked_widgets": [
+						{
+							"node": "fbm2",
+							"widget": "scale_x"
+						}
+					],
+					"name": "param0",
+					"type": "linked_control"
+				},
+				{
+					"label": "Scale1 Y",
+					"linked_widgets": [
+						{
+							"node": "fbm2",
+							"widget": "scale_y"
+						}
+					],
+					"name": "param1",
+					"type": "linked_control"
+				},
+				{
+					"label": "Scale2 X",
+					"linked_widgets": [
+						{
+							"node": "fbm2_2",
+							"widget": "scale_x"
+						}
+					],
+					"name": "param2",
+					"type": "linked_control"
+				},
+				{
+					"label": "Scale2 Y",
+					"linked_widgets": [
+						{
+							"node": "fbm2_2",
+							"widget": "scale_y"
+						}
+					],
+					"name": "param3",
+					"type": "linked_control"
+				},
+				{
+					"label": "Strenght",
+					"linked_widgets": [
+						{
+							"node": "warp",
+							"widget": "amount"
+						}
+					],
+					"name": "param4",
+					"type": "linked_control"
+				},
+				{
+					"label": "Epsilon",
+					"linked_widgets": [
+						{
+							"node": "warp",
+							"widget": "eps"
+						}
+					],
+					"name": "param5",
+					"type": "linked_control"
+				},
+				{
+					"label": "Sharpen Res",
+					"linked_widgets": [
+						{
+							"node": "sharpen",
+							"widget": "size"
+						},
+						{
+							"node": "buffer_2",
+							"widget": "size"
+						}
+					],
+					"name": "param8",
+					"type": "linked_control"
+				}
+			]
+		},
+		{
+			"name": "buffer_2",
+			"node_position": {
+				"x": -280.849823,
+				"y": -63.082649
+			},
+			"parameters": {
+				"size": 9
+			},
+			"type": "buffer",
+			"version": 1
+		}
+	],
+	"parameters": {
+		"param0": 8,
+		"param1": 12,
+		"param2": 1,
+		"param3": 2,
+		"param4": 0.825,
+		"param5": 0.19,
+		"param6": 0,
+		"param7": 0.5,
+		"param8": 9
+	},
+	"shortdesc": "",
+	"type": "graph"
+}
