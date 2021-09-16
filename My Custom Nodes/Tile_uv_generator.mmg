@@ -1,0 +1,579 @@
+{
+	"connections": [
+		{
+			"from": "gen_inputs",
+			"from_port": 0,
+			"to": "edge_detect",
+			"to_port": 0
+		},
+		{
+			"from": "fill_to_uv",
+			"from_port": 0,
+			"to": "custom_uv",
+			"to_port": 1
+		},
+		{
+			"from": "gradient_2",
+			"from_port": 0,
+			"to": "custom_uv_2",
+			"to_port": 0
+		},
+		{
+			"from": "gradient_3",
+			"from_port": 0,
+			"to": "custom_uv_3",
+			"to_port": 0
+		},
+		{
+			"from": "gradient",
+			"from_port": 0,
+			"to": "custom_uv",
+			"to_port": 0
+		},
+		{
+			"from": "fill_to_uv",
+			"from_port": 0,
+			"to": "custom_uv_2",
+			"to_port": 1
+		},
+		{
+			"from": "fill_to_uv",
+			"from_port": 0,
+			"to": "custom_uv_3",
+			"to_port": 1
+		},
+		{
+			"from": "fill_2",
+			"from_port": 0,
+			"to": "fill_to_uv",
+			"to_port": 0
+		},
+		{
+			"from": "custom_uv_3",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "custom_uv_2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 1
+		},
+		{
+			"from": "custom_uv",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 0
+		},
+		{
+			"from": "fill_to_uv",
+			"from_port": 0,
+			"to": "custom_uv_4",
+			"to_port": 1
+		},
+		{
+			"from": "gradient_4",
+			"from_port": 0,
+			"to": "custom_uv_4",
+			"to_port": 0
+		},
+		{
+			"from": "custom_uv_4",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 1
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 0
+		},
+		{
+			"from": "edge_detect",
+			"from_port": 0,
+			"to": "fill_2",
+			"to_port": 0
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "gen_outputs",
+			"to_port": 0
+		}
+	],
+	"label": "Tile UV Generator",
+	"longdesc": "",
+	"name": "Tile_uv_generator",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"name": "gradient_3",
+			"node_position": {
+				"x": -1388.494629,
+				"y": 1301.105835
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 0.754314,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 1,
+				"rotate": 79.448269
+			},
+			"type": "gradient"
+		},
+		{
+			"name": "gradient_2",
+			"node_position": {
+				"x": -1389.599976,
+				"y": 1186.304321
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 0.503322,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 1,
+				"rotate": 79.448269
+			},
+			"type": "gradient"
+		},
+		{
+			"name": "fill_to_uv",
+			"node_position": {
+				"x": -1222.532959,
+				"y": 893.3172
+			},
+			"parameters": {
+				"mode": 0
+			},
+			"type": "fill_to_uv"
+		},
+		{
+			"name": "fill_2",
+			"node_position": {
+				"x": -1423.047852,
+				"y": 625.822754
+			},
+			"parameters": {
+				"param0": 9,
+				"param1": 10
+			},
+			"type": "fill"
+		},
+		{
+			"name": "gradient",
+			"node_position": {
+				"x": -1394.161499,
+				"y": 1075.78064
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 0.282917,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 1,
+				"rotate": 79.448269
+			},
+			"type": "gradient"
+		},
+		{
+			"name": "edge_detect",
+			"node_position": {
+				"x": -1700.744141,
+				"y": 598.957764
+			},
+			"parameters": {
+				"size": 9,
+				"threshold": 0.5,
+				"width": 1
+			},
+			"type": "edge_detect"
+		},
+		{
+			"name": "custom_uv",
+			"node_position": {
+				"x": -750.092712,
+				"y": 724.219421
+			},
+			"parameters": {
+				"inputs": 0,
+				"rotate": 136.6,
+				"scale": 4.59,
+				"sx": 4.49,
+				"sy": 4.49
+			},
+			"type": "custom_uv"
+		},
+		{
+			"name": "custom_uv_2",
+			"node_position": {
+				"x": -749.370178,
+				"y": 921.915955
+			},
+			"parameters": {
+				"inputs": 0,
+				"rotate": 136.6,
+				"scale": 4.59,
+				"sx": 4.49,
+				"sy": 4.49
+			},
+			"type": "custom_uv"
+		},
+		{
+			"name": "custom_uv_3",
+			"node_position": {
+				"x": -756.796814,
+				"y": 1123.963013
+			},
+			"parameters": {
+				"inputs": 0,
+				"rotate": 136.6,
+				"scale": 4.59,
+				"sx": 4.49,
+				"sy": 4.49
+			},
+			"type": "custom_uv"
+		},
+		{
+			"name": "gen_inputs",
+			"node_position": {
+				"x": -2294.086914,
+				"y": 681.094543
+			},
+			"parameters": {
+
+			},
+			"ports": [
+				{
+					"group_size": 0,
+					"name": "port0",
+					"type": "rgba"
+				}
+			],
+			"type": "ios"
+		},
+		{
+			"name": "gen_outputs",
+			"node_position": {
+				"x": 706.347656,
+				"y": 795.142578
+			},
+			"parameters": {
+
+			},
+			"ports": [
+				{
+					"group_size": 0,
+					"name": "Custom Uv",
+					"type": "rgba"
+				}
+			],
+			"type": "ios"
+		},
+		{
+			"name": "gen_parameters",
+			"node_position": {
+				"x": -1402.911987,
+				"y": 291.119446
+			},
+			"parameters": {
+				"param0": 9,
+				"param2": 0,
+				"param3": 4.49,
+				"param5": 136.6,
+				"param6": 4.59,
+				"param8": 79.448269
+			},
+			"type": "remote",
+			"widgets": [
+				{
+					"label": "Size",
+					"linked_widgets": [
+						{
+							"node": "edge_detect",
+							"widget": "size"
+						},
+						{
+							"node": "fill_2",
+							"widget": "param0"
+						}
+					],
+					"name": "param0",
+					"type": "linked_control"
+				},
+				{
+					"label": "Fill to UV",
+					"linked_widgets": [
+						{
+							"node": "fill_to_uv",
+							"widget": "mode"
+						}
+					],
+					"name": "param2",
+					"type": "linked_control"
+				},
+				{
+					"label": "UV Scale",
+					"linked_widgets": [
+						{
+							"node": "custom_uv",
+							"widget": "sx"
+						},
+						{
+							"node": "custom_uv_2",
+							"widget": "sx"
+						},
+						{
+							"node": "custom_uv_3",
+							"widget": "sx"
+						},
+						{
+							"node": "custom_uv_4",
+							"widget": "sx"
+						},
+						{
+							"node": "custom_uv",
+							"widget": "sy"
+						},
+						{
+							"node": "custom_uv_2",
+							"widget": "sy"
+						},
+						{
+							"node": "custom_uv_3",
+							"widget": "sy"
+						},
+						{
+							"node": "custom_uv_4",
+							"widget": "sy"
+						}
+					],
+					"name": "param3",
+					"type": "linked_control"
+				},
+				{
+					"label": "Uv Rnd Rotate",
+					"linked_widgets": [
+						{
+							"node": "custom_uv",
+							"widget": "rotate"
+						},
+						{
+							"node": "custom_uv_2",
+							"widget": "rotate"
+						},
+						{
+							"node": "custom_uv_3",
+							"widget": "rotate"
+						},
+						{
+							"node": "custom_uv_4",
+							"widget": "rotate"
+						}
+					],
+					"name": "param5",
+					"type": "linked_control"
+				},
+				{
+					"label": "UV Rnd Scale",
+					"linked_widgets": [
+						{
+							"node": "custom_uv",
+							"widget": "scale"
+						},
+						{
+							"node": "custom_uv_2",
+							"widget": "scale"
+						},
+						{
+							"node": "custom_uv_3",
+							"widget": "scale"
+						},
+						{
+							"node": "custom_uv_4",
+							"widget": "scale"
+						}
+					],
+					"name": "param6",
+					"type": "linked_control"
+				},
+				{
+					"label": "Grad Rotate",
+					"linked_widgets": [
+						{
+							"node": "gradient",
+							"widget": "rotate"
+						},
+						{
+							"node": "gradient_2",
+							"widget": "rotate"
+						},
+						{
+							"node": "gradient_3",
+							"widget": "rotate"
+						},
+						{
+							"node": "gradient_4",
+							"widget": "rotate"
+						}
+					],
+					"name": "param8",
+					"type": "linked_control"
+				}
+			]
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -257.584412,
+				"y": 743.250122
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 2
+			},
+			"type": "blend"
+		},
+		{
+			"name": "blend_2",
+			"node_position": {
+				"x": -11.025703,
+				"y": 676.429321
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 2
+			},
+			"type": "blend"
+		},
+		{
+			"name": "custom_uv_4",
+			"node_position": {
+				"x": -750.789307,
+				"y": 1306.497192
+			},
+			"parameters": {
+				"inputs": 0,
+				"rotate": 136.6,
+				"scale": 4.59,
+				"sx": 4.49,
+				"sy": 4.49
+			},
+			"type": "custom_uv"
+		},
+		{
+			"name": "gradient_4",
+			"node_position": {
+				"x": -1380.892944,
+				"y": 1413.867432
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"pos": 0,
+							"r": 0
+						},
+						{
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"pos": 1,
+							"r": 1
+						}
+					],
+					"type": "Gradient"
+				},
+				"repeat": 1,
+				"rotate": 79.448269
+			},
+			"type": "gradient"
+		},
+		{
+			"name": "blend_3",
+			"node_position": {
+				"x": 87.012817,
+				"y": 842.631104
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 2
+			},
+			"type": "blend"
+		}
+	],
+	"parameters": {
+		"param0": 9,
+		"param2": 0,
+		"param3": 4.49,
+		"param5": 136.6,
+		"param6": 4.59,
+		"param8": 79.448269
+	},
+	"shortdesc": "",
+	"type": "graph"
+}

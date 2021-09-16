@@ -1,0 +1,510 @@
+{
+	"connections": [
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 0
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 1
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "buffer_2",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_3",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 0
+		},
+		{
+			"from": "buffer_2",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 1
+		},
+		{
+			"from": "invert",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 0
+		},
+		{
+			"from": "tones_step_2",
+			"from_port": 0,
+			"to": "gen_outputs",
+			"to_port": 1
+		},
+		{
+			"from": "transform2",
+			"from_port": 0,
+			"to": "gen_outputs",
+			"to_port": 2
+		},
+		{
+			"from": "bricks",
+			"from_port": 1,
+			"to": "transform2",
+			"to_port": 1
+		},
+		{
+			"from": "bricks",
+			"from_port": 1,
+			"to": "transform2",
+			"to_port": 2
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "invert",
+			"to_port": 0
+		},
+		{
+			"from": "gen_inputs",
+			"from_port": 0,
+			"to": "bricks",
+			"to_port": 0
+		},
+		{
+			"from": "gen_inputs",
+			"from_port": 1,
+			"to": "bricks",
+			"to_port": 1
+		},
+		{
+			"from": "gen_inputs",
+			"from_port": 2,
+			"to": "bricks",
+			"to_port": 2
+		},
+		{
+			"from": "fbm2_4",
+			"from_port": 0,
+			"to": "transform2",
+			"to_port": 0
+		},
+		{
+			"from": "bricks",
+			"from_port": 1,
+			"to": "gen_outputs",
+			"to_port": 3
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "gen_outputs",
+			"to_port": 0
+		},
+		{
+			"from": "math",
+			"from_port": 0,
+			"to": "tones_step_2",
+			"to_port": 0
+		}
+	],
+	"label": "Stalker Style Tile maker",
+	"longdesc": "",
+	"name": "Stalker_style_tiles",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"name": "invert",
+			"node_position": {
+				"x": -949.986877,
+				"y": 240.625168
+			},
+			"parameters": {
+
+			},
+			"type": "invert"
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -1632.439331,
+				"y": 486.633331
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 4
+			},
+			"type": "blend"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -2075.308105,
+				"y": 609.498413
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 1,
+				"persistence": 0.5,
+				"scale_x": 6,
+				"scale_y": 6
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -2078.971191,
+				"y": 427.916473
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"persistence": 0.5,
+				"scale_x": 2,
+				"scale_y": 2
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": -325.311493,
+				"y": 116.380913
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 1,
+				"default_in2": 1,
+				"op": 2
+			},
+			"type": "math"
+		},
+		{
+			"name": "blend_2",
+			"node_position": {
+				"x": -644.115173,
+				"y": 115.721107
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 4
+			},
+			"type": "blend"
+		},
+		{
+			"name": "warp",
+			"node_position": {
+				"x": -1289.319336,
+				"y": 337.220093
+			},
+			"parameters": {
+				"amount": 0.41,
+				"eps": 0.195,
+				"mode": 0
+			},
+			"type": "warp"
+		},
+		{
+			"name": "buffer_2",
+			"node_position": {
+				"x": -1044.411621,
+				"y": 95.895264
+			},
+			"parameters": {
+				"size": 9
+			},
+			"type": "buffer",
+			"version": 1
+		},
+		{
+			"name": "fbm2_3",
+			"node_position": {
+				"x": -2077.705078,
+				"y": 249.117615
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 7,
+				"noise": 0,
+				"persistence": 0.77,
+				"scale_x": 19,
+				"scale_y": 17
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "fbm2_4",
+			"node_position": {
+				"x": -2077.001709,
+				"y": 58.181362
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 0,
+				"persistence": 0.74,
+				"scale_x": 16,
+				"scale_y": 16
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "transform2",
+			"node_position": {
+				"x": -1505.592041,
+				"y": 39.74929
+			},
+			"parameters": {
+				"mode": 1,
+				"rotate": 0,
+				"scale_x": 1,
+				"scale_y": 1,
+				"translate_x": 1,
+				"translate_y": 1
+			},
+			"type": "transform2"
+		},
+		{
+			"name": "tones_step_2",
+			"node_position": {
+				"x": -66.214653,
+				"y": 20.997742
+			},
+			"parameters": {
+				"invert": false,
+				"value": 0.32,
+				"width": 0.5
+			},
+			"type": "tones_step"
+		},
+		{
+			"name": "gen_inputs",
+			"node_position": {
+				"x": -2451.629639,
+				"y": -223.548996
+			},
+			"parameters": {
+
+			},
+			"ports": [
+				{
+					"group_size": 0,
+					"name": "Mortar map",
+					"type": "rgba"
+				},
+				{
+					"group_size": 0,
+					"name": "Bevel map",
+					"type": "rgba"
+				},
+				{
+					"group_size": 0,
+					"name": "Round map",
+					"type": "rgba"
+				}
+			],
+			"type": "ios"
+		},
+		{
+			"name": "gen_outputs",
+			"node_position": {
+				"x": 199.617325,
+				"y": -177.959763
+			},
+			"parameters": {
+
+			},
+			"ports": [
+				{
+					"group_size": 0,
+					"name": "Tiles map",
+					"type": "f"
+				},
+				{
+					"group_size": 0,
+					"name": "Betweens",
+					"type": "f"
+				},
+				{
+					"group_size": 0,
+					"name": "Tiles texture",
+					"type": "f"
+				},
+				{
+					"group_size": 0,
+					"name": "Random Color",
+					"type": "rgba"
+				}
+			],
+			"type": "ios"
+		},
+		{
+			"name": "gen_parameters",
+			"node_position": {
+				"x": -1005.392456,
+				"y": -495.913788
+			},
+			"parameters": {
+				"param0": 6,
+				"param1": 3,
+				"param2": 0.5,
+				"param3": 0,
+				"param4": 0.09,
+				"param5": 9,
+				"param6": 16,
+				"param7": 0
+			},
+			"type": "remote",
+			"widgets": [
+				{
+					"label": "Resolution",
+					"linked_widgets": [
+						{
+							"node": "buffer_2",
+							"widget": "size"
+						}
+					],
+					"name": "param5",
+					"type": "linked_control"
+				},
+				{
+					"label": "Rows",
+					"linked_widgets": [
+						{
+							"node": "bricks",
+							"widget": "rows"
+						}
+					],
+					"name": "param0",
+					"type": "linked_control"
+				},
+				{
+					"label": "Collums",
+					"linked_widgets": [
+						{
+							"node": "bricks",
+							"widget": "columns"
+						}
+					],
+					"name": "param1",
+					"type": "linked_control"
+				},
+				{
+					"label": "Offset",
+					"linked_widgets": [
+						{
+							"node": "bricks",
+							"widget": "row_offset"
+						}
+					],
+					"name": "param2",
+					"type": "linked_control"
+				},
+				{
+					"label": "Bevel",
+					"linked_widgets": [
+						{
+							"node": "bricks",
+							"widget": "bevel"
+						}
+					],
+					"name": "param4",
+					"type": "linked_control"
+				},
+				{
+					"label": "Mortar",
+					"linked_widgets": [
+						{
+							"node": "bricks",
+							"widget": "mortar"
+						}
+					],
+					"name": "param3",
+					"type": "linked_control"
+				},
+				{
+					"label": "Tile Texture",
+					"linked_widgets": [
+						{
+							"node": "fbm2_4",
+							"widget": "scale_x"
+						},
+						{
+							"node": "fbm2_4",
+							"widget": "scale_y"
+						}
+					],
+					"name": "param6",
+					"type": "linked_control"
+				},
+				{
+					"label": "Noise type",
+					"linked_widgets": [
+						{
+							"node": "fbm2_4",
+							"widget": "noise"
+						}
+					],
+					"name": "param7",
+					"type": "linked_control"
+				}
+			]
+		},
+		{
+			"name": "bricks",
+			"node_position": {
+				"x": -1824.030518,
+				"y": -165.137238
+			},
+			"parameters": {
+				"bevel": 0.09,
+				"columns": 3,
+				"corner": 0.3,
+				"mortar": 0,
+				"pattern": 0,
+				"repeat": 2,
+				"round": 0,
+				"row_offset": 0.5,
+				"rows": 6
+			},
+			"type": "bricks"
+		}
+	],
+	"parameters": {
+		"param0": 6,
+		"param1": 3,
+		"param2": 0.5,
+		"param3": 0,
+		"param4": 0.09,
+		"param5": 9,
+		"param6": 16,
+		"param7": 0
+	},
+	"shortdesc": "",
+	"type": "graph"
+}
