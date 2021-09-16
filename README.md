@@ -10,3 +10,5 @@ Makkon Bricks - Reproduces Bricks in the style of the enviroment artist "Makkon"
 Snow Maker - Makes textures that look like snow
 
 Rust Machine - put any grey image through it and it will come out with a nice Rusty look.
+
+Wood Maker - Makes grey textures similar to wood.
